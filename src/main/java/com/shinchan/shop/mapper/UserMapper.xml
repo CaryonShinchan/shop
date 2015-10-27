@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shinchan.shop.dao.UserDao">
+	<resultMap id="UserResult" type="com.shinchan.shop.domain.User">
+		<id column="user_id" property="user_id" jdbcType="INTEGER" />
+		<result column="user_email" property="user_email" jdbcType="VARCHAR" />
+		<result column="user_phone" property="user_phone" jdbcType="VARCHAR" />
+		<result column="user_password" property="user_password"
+			jdbcType="VARCHAR" />
+		<result column="user_reg_date" property="user_reg_date"
+			jdbcType="VARCHAR" />
+		<result column="user_login_date" property="user_login_date"
+			jdbcType="VARCHAR" />
+		<result column="user_login_ip" property="user_login_ip"
+			jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		user_id, user_email, user_phone, user_password,
+		user_reg_date, user_login_date, user_login_ip
+	</sql>
+
+	<select id="selectByPrimaryKey" resultMap="UserResult"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from shop_user
+		where user_id = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="getUserPassword" resultType="java.lang.String"
+		parameterType="com.shinchan.shop.domain.User">
+		select
+		user_password
+		from shop_user
+		where
+		<choose>
+			<when test="user_email != null and user_email != ''">
+				user_email = #{user_email}
+			</when>
+			<when test="user_phone != null and user_phone != ''">
+				user_phone = #{user_phone}
+			</when>
+		</choose>
+	</select>
+
+	<select id="checkEmail" resultType="java.lang.Integer" parameterType="java.lang.String">
+		select
+			count(user_email) from shop_user
+		where
+			user_email = #{email}
+	</select>
+	
+	<select id="checkPhone" resultType="java.lang.Integer" parameterType="java.lang.String">
+		select
+			count(user_phone) from shop_user
+		where
+			user_phone = #{phone}
+	</select>
+
+	<select id="selectAll" resultMap="UserResult">
+		select
+		<include refid="Base_Column_List" />
+		from shop_user
+	</select>
+
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from
+		shop_user
+		where user_id = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="insert" parameterType="com.shinchan.shop.domain.User">
+		insert into shop_user
+		(user_email, user_phone, user_password, user_reg_date,
+		user_login_date, user_login_ip)
+		values (#{user_email,jdbcType=VARCHAR},
+		#{user_phone,jdbcType=VARCHAR},
+		#{user_password,jdbcType=VARCHAR},
+		#{user_reg_date,jdbcType=VARCHAR},
+		#{user_login_date,jdbcType=VARCHAR},
+		#{user_login_ip,jdbcType=VARCHAR})
+	</insert>
+
+	<insert id="insertSelective" parameterType="com.shinchan.shop.domain.User">
+		insert into shop_user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="user_email != null and user_email != ''">
+				user_email,
+			</if>
+			<if test="user_phone != null and user_phone != ''">
+				user_phone,
+			</if>
+			<if test="user_password != null and user_password != ''">
+				user_password,
+			</if>
+			<if test="user_reg_date != null and user_reg_date != ''">
+				user_reg_date,
+			</if>
+			<if test="user_login_date != null and user_login_date != ''">
+				user_login_date,
+			</if>
+			<if test="user_login_ip != null and user_login_ip != ''">
+				user_login_ip,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="user_email != null and user_email != ''">
+				#{user_email,jdbcType=VARCHAR},
+			</if>
+			<if test="user_phone != null and user_phone != ''">
+				#{user_phone,jdbcType=VARCHAR},
+			</if>
+			<if test="user_password != null and user_password != ''">
+				#{user_password,jdbcType=VARCHAR},
+			</if>
+			<if test="user_reg_date != null and user_reg_date != ''">
+				#{user_reg_date,jdbcType=VARCHAR},
+			</if>
+			<if test="user_login_date != null and user_login_date != ''">
+				#{user_login_date,jdbcType=VARCHAR},
+			</if>
+			<if test="user_login_ip != null and user_login_ip != ''">
+				#{user_login_ip,jdbcType=VARCHAR}
+			</if>
+		</trim>
+	</insert>
+
+	<update id="updateByPrimaryKeySelective" parameterType="com.shinchan.shop.domain.User">
+		update shop_user
+		<set>
+			<if test="user_email != null and user_email != ''">
+				user_email = #{user_email,jdbcType=VARCHAR},
+			</if>
+			<if test="user_phone != null and user_phone != ''">
+				user_phone = #{user_phone,jdbcType=VARCHAR},
+			</if>
+			<if test="user_password != null and user_password != ''">
+				user_password = #{user_password,jdbcType=VARCHAR},
+			</if>
+			<if test="user_reg_date != null and user_reg_date != ''">
+				user_reg_date = #{user_reg_date,jdbcType=VARCHAR},
+			</if>
+			<if test="user_login_date != null and user_login_date != ''">
+				user_login_date = #{user_login_date,jdbcType=VARCHAR},
+			</if>
+			<if test="user_login_ip != null and user_login_ip != ''">
+				user_login_ip = #{user_login_ip,jdbcType=VARCHAR}
+			</if>
+		</set>
+		where user_id = #{user_id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="com.shinchan.shop.domain.User">
+		update shop_user
+		set
+		user_email = #{user_email,jdbcType=VARCHAR},
+		user_phone =
+		#{user_phone,jdbcType=VARCHAR},
+		user_password =
+		#{user_password,jdbcType=VARCHAR},
+		user_reg_date =
+		#{user_reg_date,jdbcType=VARCHAR},
+		user_login_date =
+		#{user_login_date,jdbcType=VARCHAR},
+		user_login_ip =
+		#{user_login_ip,jdbcType=VARCHAR},
+		where user_id =
+		#{user_id,jdbcType=INTEGER}
+	</update>
+
+</mapper>

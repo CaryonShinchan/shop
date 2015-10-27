@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,div,p,span,ul,li,dl,dt,dd,a,ol,input,img,h1,h2,h3,h4,input,button{ padding:0; margin:0; list-style:none; border:0; }
+body{ font-family: "Microsoft Yahei",Arial,Helvetica,sans-serif; color:#616161; font-size:14px; background: #fafafa;}
+a{ color:#0066cc; text-decoration:none; font-size:14px}
+a:hover{ text-decoration:none; color: #f60;}
+
+
+/*头部导航部分*/
+#header{width: 100%; height: 100px; margin: 0 auto; border-bottom: 1px solid #ededed; overflow: hidden; background: #fff;}
+#header .main{width: 100%; height: 100px; margin: 0 auto; overflow: hidden;}
+#header h1{float: left; margin-top: 10px; margin-left: 10%}
+#header h1 img{width: 150px;}
+#header h2{float: right; font-size: 12px; line-height: 100px; margin-right: 10%; font-family: "Microsoft Yahei",Arial,Helvetica,sans-serif; font-weight: normal;}
+#header h2 .right{margin-left: 15px; width: 100px; height: 30px; line-height: 30px; background: url(../img/icon01.png) no-repeat right center; padding-right: 16px;}
+
+/*主题部分*/
+#content{width: 100%; height: 557px;  background: url(../img/regist_bg.jpg) repeat; margin: 0 auto; position: relative; padding-top: 30px;}
+#content .registered{width: 800px; height: 500px; margin: 0px auto; background: #fff; border: 5px solid #c6c6c6;}
+.clearfix{width: 100%; height: 25px; line-height: 25px; text-align: center; font-size: 18px; margin-top: 15px; position: relative;}
+.clearfix li{float: left; width: 20%; text-align: center; cursor: pointer;}
+.clearfix .current{margin-left: 30%; border-right: 1px solid #c6c6c6; color: #5d891f; font-weight: bold; font-size: 18px;}
+
+.registered .mid{width: 400px; margin-left: 200px; margin-top: 35px; position: absolute; top: 75px; display: block;}
+.registered input{color: #ccc; width: 385px; height: 50px; line-height: 50px; border: 1px solid #ccc; background: #fff; padding-left: 15px;}
+.registered .code{position: relative; margin-top: 15px;}
+.registered .code span{position: absolute; cursor: pointer; right: 5px; top: 20px; width: 70px; height: 15px; padding-left: 15px; border-left: 1px solid #ccc;}
+.registered .mid .phone_txt{margin-top: 15px; color: #8C8C8C;}
+.registered .mid .email_txt{margin-top: 15px; color: #8C8C8C;}
+.registered .mid .paswd_txt{margin-top: 15px; color: #8C8C8C;}
+.registered .mid .code_txt{color: #8C8C8C;}
+.registered .mid .reg_btn{color:#fff; text-decoration:none; font-size:14px;}
+
+/*.registered .mid .email_check{position: relative;}
+.registered .mid .email_check strong{position: absolute; right: -40px; top: 30px; color: red; width: 20px;}*/
+
+.registered .check{position: relative; width: 385px; height: 50px; line-height: 50px;}
+.registered .check .check_put{width: 10px; margin-left: 10px;}
+.registered .check p{position: absolute; left: 40px; top:-2px; font-size: 14px; color: #C6C6C6;}
+.registered button{width: 400px; height: 50px; line-height: 50px; cursor: pointer; text-align: center; margin-top: 15px; background: #5d891f; font-size: 18px; border-radius: 5px;}
+.registered button a{color: #fff;}
+
+.registered .mid02{width: 400px; margin-left: 200px; margin-top: 35px; position: absolute; top: 75px; display: none;}
+.registered input{color: #ccc; width: 385px; height: 50px; line-height: 50px; border: 1px solid #ccc; background: #fff; padding-left: 15px;}
+.registered .code{position: relative; margin-top: 15px;}
+.registered .code span{position: absolute; cursor: pointer; right: 10px; top: 15px; width: 70px; height: 15px; padding-left: 15px; border-left: 1px solid #ccc;}
+.registered .mid02 .paswd_txt{margin-top: 15px; color: #8C8C8C;}
+.registered .mid02 .phone_txt{margin-top: 15px; color: #8C8C8C;}
+.registered .mid02 .code_txt{color: #8C8C8C;}
+.registered .mid02 .reg_btn{color:#fff; text-decoration:none; font-size:14px;}
+.registered .check{position: relative; width: 385px; height: 50px; line-height: 50px;}
+.registered .check .check_put{width: 10px; margin-left: 10px;}
+.registered .check p{position: absolute; left: 40px; top:-2px; font-size: 14px; color: #000;}
+.registered button{width: 400px; height: 50px; line-height: 50px; cursor: pointer; text-align: center; margin-top: 15px; background: #5d891f; font-size: 18px; border-radius: 5px;}
+.registered button a{color: #fff;}
+
+.eye{position: relative; }
+.icon-eye{position: absolute; right: 15px; top: 20px; font-size: 18px; color: #8C8C8C;}
+.icon-eye-blocked{position: absolute; right: 15px; top: 20px; font-size: 18px; color: #8C8C8C;}
+
+/*footer*/
+#footer{margin: 0 auto; text-align: center;}
+#footer p{line-height: 30px;}
+
+/* Tips */
+.error{display: none;margin-left: 0px;margin-bottom: 5px;margin-top:10px;color: red;}
+.errorC{ margin-bottom: 10px;border-color: red;color: red;}
+
+.checkedN{border: 1px solid #1ece6d;}

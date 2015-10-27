@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shinchan.shop.dao.UserInfoDao">
+	<resultMap id="UserInfoResult" type="com.shinchan.shop.domain.UserInfo">
+		<id column="user_info_id" property="user_info_id" jdbcType="INTEGER" />
+<!-- 		<result column="user_id" property="user" /> -->
+		<result column="user_info_nickname" property="user_info_nickname" jdbcType="VARCHAR" />
+		<result column="user_info_gender" property="user_info_gender" jdbcType="VARCHAR" />
+		<result column="user_info_birthday" property="user_info_birthday" jdbcType="VARCHAR" />
+		<result column="user_info_realname" property="user_info_realname" jdbcType="VARCHAR" />
+		<result column="user_info_location" property="user_info_location" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		user_info_id, user_id, user_info_nickname, user_info_photo, user_info_gender, 
+		user_info_birthday, user_info_realname, user_info_location
+	</sql>
+	
+	<select id="selectByPrimaryKey" resultMap="UserInfoResult"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from shop_user_info
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="selectAll" resultMap="UserInfoResult">
+		select
+		<include refid="Base_Column_List" />
+		from shop_user_info
+	</select>
+	
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from shop_user_info
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	
+	<insert id="insert" parameterType="com.shinchan.shop.domain.UserInfo">
+		insert into shop_user_info (id, name, password, email, phone)
+		values (#{id,jdbcType=INTEGER},
+		#{name,jdbcType=VARCHAR},
+		#{password,jdbcType=VARCHAR},
+		#{email,jdbcType=VARCHAR},
+		#{phone,jdbcType=VARCHAR})
+	</insert>
+	
+	<insert id="insertSelective" parameterType="com.shinchan.shop.domain.UserInfo">
+		insert into shop_user_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="password != null">
+				password,
+			</if>
+			<if test="email != null">
+				email,
+			</if>
+			<if test="phone != null">
+				phone
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="age != null">
+				#{password,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				#{email,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				#{phone,jdbcType=VARCHAR}
+			</if>
+		</trim>
+	</insert>
+	
+	<update id="updateByPrimaryKeySelective" parameterType="com.shinchan.shop.domain.UserInfo">
+		update shop_user_info
+		<set>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="age != null">
+				password = #{password,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				phone = #{email,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				phone = #{phone,jdbcType=VARCHAR}
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<update id="updateByPrimaryKey" parameterType="com.shinchan.shop.domain.UserInfo">
+		update shop_user_info
+		set
+		name = #{name,jdbcType=VARCHAR},
+		password = #{password,jdbcType=VARCHAR},
+		email = #{email,jdbcType=VARCHAR},
+		phone = #{phone,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	
+<!-- 	<association property="user" column="user_id" javaType="com.shinchan.shop.domain.User" select="getUser"/> -->
+
+<!-- 	<select id="getUser" resultType="User"> -->
+<!-- 		select user_id, user_email, user_phone, user_password, user_reg_date, user_login_date, -->
+<!-- 		user_login_ip from shop_user where user_id=#{id} -->
+<!-- 	</select> -->
+
+</mapper>

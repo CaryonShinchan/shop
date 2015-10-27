@@ -1,0 +1,52 @@
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+/* =======================================================================================
+Example showing how to change the color/size of the icons:
+.icon-name {
+	font-size: 32px; // works because "width" & "height" were set using em units
+	color: red; // works for single-colored icons, because "fill" was set to "currentColor"
+}
+======================================================================================== */
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?dq5f2z');
+	src:url('../fonts/icomoon.eot?#iefixdq5f2z') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?dq5f2z') format('truetype'),
+		url('../fonts/icomoon.woff?dq5f2z') format('woff'),
+		url('../fonts/icomoon.svg?dq5f2z#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-eye:before {
+	content: "\e600";
+}
+.icon-eye-blocked:before {
+	content: "\e601";
+}
+.icon-user:before {
+	content: "\e602";
+}
+.icon-lock:before {
+	content: "\e603";
+}
