@@ -66,5 +66,7 @@ a:hover{ text-decoration:none; color: #f60;}
 /* Tips */
 .error{display: none;margin-left: 0px;margin-bottom: 5px;margin-top:10px;color: red;}
 .errorC{ margin-bottom: 10px;border-color: red;color: red;}
+.icon-mail{font-size: 20px;}
+.icon-phone{font-size: 20px;}
 
 .checkedN{border: 1px solid #1ece6d;}

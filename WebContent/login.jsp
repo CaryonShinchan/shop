@@ -31,11 +31,12 @@
 							<div class="form_item cur">
 								<label class="icon-user"> </label>
 								<input id="un" class="ipt ipt_username gay_text" type="text" style="outline: none;" tabindex="1" spellcheck="false" name="user_email" placeholder="邮箱/手机号">
+								<span class="error error_user"></span>
 							</div>
 							<div class="form_item">
 								<label class="icon-lock"> </label>
 								<input id="pwd" class="ipt ipt_password gay_text" type="password" style="outline: none;" tabindex="2" name="user_password" placeholder="密码">
-									
+								<span class="error error_password"></span>	
 								<div>
 									<input class="autoLogin" type="checkbox" name="rember" checked="checked" />
 									<a class="uncheck_agreement">自动登录</a>

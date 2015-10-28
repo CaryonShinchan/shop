@@ -27,9 +27,11 @@
 				<form id="reg_form" action="" method="post">
 					<ul class="clearfix">
 						<li class="current">
+							<label class="icon-mail"> </label>
 							<span>邮箱帐号注册</span>
 						</li>
 						<li class="current02">
+							<label class="icon-phone"> </label>
 							<span>手机号码注册</span>
 						</li>
 					</ul>

@@ -1,25 +1,10 @@
-.icon {
-	display: inline-block;
-	width: 1em;
-	height: 1em;
-	fill: currentColor;
-}
-
-/* =======================================================================================
-Example showing how to change the color/size of the icons:
-.icon-name {
-	font-size: 32px; // works because "width" & "height" were set using em units
-	color: red; // works for single-colored icons, because "fill" was set to "currentColor"
-}
-======================================================================================== */
-
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?dq5f2z');
-	src:url('../fonts/icomoon.eot?#iefixdq5f2z') format('embedded-opentype'),
-		url('../fonts/icomoon.ttf?dq5f2z') format('truetype'),
-		url('../fonts/icomoon.woff?dq5f2z') format('woff'),
-		url('../fonts/icomoon.svg?dq5f2z#icomoon') format('svg');
+	src:url('../fonts/icomoon.eot?nnzfyq');
+	src:url('../fonts/icomoon.eot?nnzfyq#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?nnzfyq') format('truetype'),
+		url('../fonts/icomoon.woff?nnzfyq') format('woff'),
+		url('../fonts/icomoon.svg?nnzfyq#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -39,14 +24,20 @@ Example showing how to change the color/size of the icons:
 }
 
 .icon-eye:before {
-	content: "\e600";
+	content: "\e904";
 }
 .icon-eye-blocked:before {
-	content: "\e601";
+	content: "\e905";
 }
 .icon-user:before {
-	content: "\e602";
+	content: "\e902";
 }
 .icon-lock:before {
-	content: "\e603";
+	content: "\e903";
+}
+.icon-phone:before {
+	content: "\e900";
+}
+.icon-mail:before {
+	content: "\e901";
 }

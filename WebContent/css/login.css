@@ -164,6 +164,9 @@ element.style {
     background-position: -159px 0px;
 }
 
+/* Tips */
+.error{display: none;margin-left: 0px;margin-bottom: 5px;margin-top:10px;color: red;}
+.errorC{ margin-bottom: 10px;border-color: red;color: red;}
 
 /*footer*/
 #footer{margin: 0 auto; text-align: center;}
