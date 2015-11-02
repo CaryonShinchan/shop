@@ -168,6 +168,26 @@ element.style {
 .error{display: none;margin-left: 0px;margin-bottom: 5px;margin-top:10px;color: red;}
 .errorC{ margin-bottom: 10px;border-color: red;color: red;}
 
+.error_tips {
+	/*background: #fff7d1 url("../img/warring.png") no-repeat scroll -524px -150px;*/
+	background: #fff7d1;
+    border: 1px solid #e5debc;
+    font-size: 14px;
+   	color: red;
+    height: 30px;
+    left: 65px;
+    line-height: 40px;
+    padding: 0px 0px 10px 45px;
+    position: absolute;
+    z-index:0;
+    top: 15px;
+    width: 320px;
+}
+
+/* icon */
+.icon-notification{margin-left: 15px; top:30px; color: red;position:absolute;z-index:1}
+
+
 /*footer*/
 #footer{margin: 0 auto; text-align: center;}
 #footer p{line-height: 30px;}

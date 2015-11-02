@@ -88,7 +88,7 @@ public class UserController {
 		}
 		response.getWriter().write("密码输入错误,请重新输入！");
 		response.getWriter().flush();
-		return null;
+		return "login";
 	}
 
 	/**

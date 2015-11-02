@@ -39,16 +39,62 @@ $(function() {
 
 	/*********************  密码隐藏显示END  ***********************/
 	
-	/*********************  切换注册方式  ***********************/
+	/**********************  切换注册方式START  ***********************/
 	var code = 0;
-	$(".current").click(function() {
+
+	$('.current').click(function(e) {
+		/* 移除错误提示 */
+		$(".mid02 .phone_txt").parent().removeClass("errorC");
+		$(".error_phone").hide();
+		$(".mid02 .paswd_txt").parent().removeClass("errorC");
+		$(".error_password").hide();
+
+		/* 设置值为空 */
+		$(".mid02 .phone_txt").val("");
+		$(".mid02 .paswd_txt").val("");
+		$(".mid02 .code_txt").val("");
+
+		$('#content .mid').show();
+		$('#content .mid02').hide();
+		$('#content .registered .clearfix .current').css({
+			"color": "#5d891f",
+			"font-weight": "bold"
+		});
+		$('#content .registered .clearfix .current02').css({
+			"color": "#666",
+			"font-weight": "normal"
+		});
 		code = 0;
 	});
-	
-	$(".current02").click(function() {
+
+	$('#content .registered .clearfix .current02').click(function(e) {
+		/* 移除错误提示 */
+		$(".mid .email_txt").parent().removeClass("errorC");
+		$(".error_email").hide();
+		$(".mid .phone_txt").parent().removeClass("errorC");
+		$(".error_phone").hide();
+		$(".mid .paswd_txt").parent().removeClass("errorC");
+		$(".error_password").hide();
+
+		/* 设置值为空 */
+		$(".mid .email_txt").val("");
+		$(".mid .phone_txt").val("");
+		$(".mid .paswd_txt").val("");
+
+		$('#content .mid02').show();
+		$('#content .mid').hide();
+		$('#content .registered .clearfix .current').css({
+			"color": "#666",
+			"font-weight": "normal"
+		});
+		$('#content .registered .clearfix .current02').css({
+			"color": "#5d891f",
+			"font-weight": "bold"
+		});
 		code = 1;
 	});
-	/*********************  切换注册方式END  ***********************/
+
+	/**********************  切换注册方式END  ***********************/
 
 	/*********************  注册验证START  ***********************/
 
@@ -341,6 +387,7 @@ $(function() {
 			mid02_password = true;
 		}
 
+		//提交注册信息
 		if (mid02_phone == true && mid02_password == true) {
 			$("#reg_form").attr("action", "http://127.0.0.1:8080/shop/user/reg.html");
 			$("#reg_form").Submit();

@@ -24,9 +24,12 @@
 		<div id="content">
 			<div class="login">
 				<h2>用户登录<a href="registered.jsp">注册新账号</a></h2>
-				<form action="http://127.0.0.1:8080/shop/user/login.html" method="post">
+				<form id="login_form" action="" method="post">
 					<div class="loginForm">
-						<i class="arraow"> </i>
+						<div class="formItemWrap">
+							<i class="icon-notification" style="display:none"></i>
+							<p id="error_tips" class="error_tips" style="display:none">您填写的账户名不存在请核对后重新填写</p>
+						</div>						
 						<div class="formItemWrap">
 							<div class="form_item cur">
 								<label class="icon-user"> </label>
@@ -43,7 +46,7 @@
 								</div>
 								<a class="forget_pswd" tabindex="-1" href="#">忘记密码？</a>
 							</div>
-							<button id="login_btn" class="login_btn" type="submit">登录</button>
+							<button class="login_btn">登录</button>
 						</div>
 					</div>
 				</form>

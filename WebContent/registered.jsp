@@ -8,7 +8,6 @@
 		<link rel="stylesheet" href="css/registered.css" type="text/css" />
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-<!-- 		<script type="text/javascript" src="js/login.js"></script> -->
 		<script type="text/javascript" src="js/register.js"></script>
 	</head>
 
