@@ -58,8 +58,8 @@
 	</bean>
 	
 	<!-- 注册拦截器 -->
-	<mvc:interceptors>
-		<bean class=""></bean>
-	</mvc:interceptors>
+<!-- 	<mvc:interceptors> -->
+<!-- 		<bean class=""></bean> -->
+<!-- 	</mvc:interceptors> -->
 
 </beans>  

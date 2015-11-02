@@ -67,9 +67,10 @@ public class UserController {
 	 * @throws InvalidKeyException
 	 * @throws IllegalBlockSizeException
 	 * @throws BadPaddingException
+	 * @throws IOException 
 	 */
 	@RequestMapping("/login")
-	public String login(User user) throws InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+	public String login(User user, HttpServletResponse response) throws InvalidKeyException, IllegalBlockSizeException, BadPaddingException, IOException {
 
 		// 先根据id获取用户记录
 		String pwdStr = userService.getUserPassword(user);
@@ -85,7 +86,9 @@ public class UserController {
 				return "index";
 			}
 		}
-		return "WebContent/login.jsp";
+		response.getWriter().write("密码输入错误,请重新输入！");
+		response.getWriter().flush();
+		return null;
 	}
 
 	/**

@@ -55,7 +55,7 @@
 						<span class="error error_phone"></span>
 						<div class="check">
 							<input class="check_put" type="radio" checked="checked">
-							<p>我已阅读并接受<a target="_blank" href="serviceAgreement.html">《服务条例》</a></p>
+							<p>我已阅读并接受<a target="_blank" href="serviceAgreement.jsp">《服务条例》</a></p>
 						</div>
 						<button class="reg_btn">注册</button>
 					</div>
@@ -77,7 +77,7 @@
 						<!--<input class="paswd_txt2" type="password"  placeholder="再次确认密码" >-->
 						<div class="check">
 							<input class="check_put" type="radio" checked="checked">
-							<p>我已阅读并接受<a target="_blank" href="serviceAgreement.html">《服务条例》</a></p>
+							<p>我已阅读并接受<a target="_blank" href="serviceAgreement.jsp">《服务条例》</a></p>
 						</div>
 						<button class="reg_btn">注册</button>
 					</div>
