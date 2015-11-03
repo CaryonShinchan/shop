@@ -86,9 +86,9 @@ public class UserController {
 				return "index";
 			}
 		}
-		response.getWriter().write("密码输入错误,请重新输入！");
+		response.getWriter().write("账号和密码不匹配，请重新输入！");
 		response.getWriter().flush();
-		return "login";
+		return "/WEB-INF/login";
 	}
 
 	/**
