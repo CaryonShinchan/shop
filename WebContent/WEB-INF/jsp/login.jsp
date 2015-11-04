@@ -1,14 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
 
 	<head>
 		<meta charset="utf-8">
 		<title>登录注册页面</title>
-		<link rel="stylesheet" href="css/login.css" type="text/css" />
-		<link rel="stylesheet" href="css/style.css" type="text/css" />
-		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript" src="js/login.js"></script>
+		<link rel="stylesheet" href="<%=basePath%>/css/login.css" type="text/css" />
+		<link rel="stylesheet" href="<%=basePath%>css/style.css" type="text/css" />
+		<script type="text/javascript" src="<%=basePath%>js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="<%=basePath%>js/login.js"></script>
 	</head>
 
 	<body>

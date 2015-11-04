@@ -41,7 +41,7 @@ $(function() {
 		
 		//提交登录信息
 		if (login_user == true && login_password == true) {
-			$("#login_form").attr("action", "http://127.0.0.1:8080/shop/user/login.html");
+			$("#login_form").attr("action", "user/login.html");
 			$("#login_form").Submit();
 		} else {
 			return false;

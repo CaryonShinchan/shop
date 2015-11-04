@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.shinchan.shop.domain.User;
 import com.shinchan.shop.service.UserService;
@@ -70,8 +71,10 @@ public class UserController {
 	 * @throws IOException 
 	 */
 	@RequestMapping("/login")
-	public String login(User user, HttpServletResponse response) throws InvalidKeyException, IllegalBlockSizeException, BadPaddingException, IOException {
+	public ModelAndView login(User user, HttpServletResponse response) throws InvalidKeyException, IllegalBlockSizeException, BadPaddingException, IOException {
 
+		ModelAndView m = new ModelAndView();
+		
 		// 先根据id获取用户记录
 		String pwdStr = userService.getUserPassword(user);
 
@@ -83,12 +86,23 @@ public class UserController {
 		if (null != pwdStr) {
 			// 验证是否正确
 			if (md5Util.validatePassword(pwdStr, user.getUser_password())) {
-				return "index";
+				m.setViewName("/jsp/index");
+				return m;
+			}
+			else
+			{
+//				redirect:http://www.baidu.com
+				m.getModelMap().put("error", "账号和密码不匹配，请重新输入！");
+//				m.setViewName("redirect:http://localhost:8080/shop/login.jsp");
+//				m.setViewName("forward:login.jsp");
+				m.setViewName("login");
+				return m;
 			}
 		}
-		response.getWriter().write("账号和密码不匹配，请重新输入！");
-		response.getWriter().flush();
-		return "/WEB-INF/login";
+//		response.getWriter().write("账号和密码不匹配，请重新输入！");
+//		response.getWriter().flush();
+//		return "/WEB-INF/login";
+		return null;
 	}
 
 	/**

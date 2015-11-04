@@ -53,8 +53,45 @@
 	<servlet-mapping>
 		<servlet-name>SpringMVC</servlet-name>
 		<url-pattern>*.html</url-pattern>
+<!-- 		<url-pattern>/</url-pattern> -->
 	</servlet-mapping>
+	
+<!-- 	<servlet-mapping> -->
+<!--         <servlet-name>default</servlet-name> -->
+<!--         <url-pattern>*.css</url-pattern> -->
+<!--     </servlet-mapping> -->
+<!--     <servlet-mapping> -->
+<!--         <servlet-name>default</servlet-name> -->
+<!--         <url-pattern>*.ttf</url-pattern> -->
+<!--     </servlet-mapping> -->
+<!--     <servlet-mapping> -->
+<!--         <servlet-name>default</servlet-name> -->
+<!--         <url-pattern>*.woff</url-pattern> -->
+<!--     </servlet-mapping> -->
+<!--     <servlet-mapping> -->
+<!--         <servlet-name>default</servlet-name> -->
+<!--         <url-pattern>*.gif</url-pattern> -->
+<!--     </servlet-mapping> -->
+
+<!--     <servlet-mapping> -->
+<!--         <servlet-name>default</servlet-name> -->
+<!--         <url-pattern>*.jpg</url-pattern> -->
+<!--     </servlet-mapping> -->
+
+<!--     <servlet-mapping> -->
+<!--         <servlet-name>default</servlet-name> -->
+<!--         <url-pattern>*.js</url-pattern> -->
+<!--     </servlet-mapping> -->
+<!--     <servlet-mapping> -->
+<!--         <servlet-name>default</servlet-name> -->
+<!--         <url-pattern>*.png</url-pattern> -->
+<!--     </servlet-mapping> -->
+<!--     <servlet-mapping> -->
+<!--         <servlet-name>default</servlet-name> -->
+<!--         <url-pattern>*.html</url-pattern> -->
+<!--     </servlet-mapping> -->
+	
 	<welcome-file-list>
-		<welcome-file>/login.jsp</welcome-file>
+		<welcome-file>/url/login.html</welcome-file>
 	</welcome-file-list>
 </web-app>

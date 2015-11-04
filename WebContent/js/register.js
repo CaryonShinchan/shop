@@ -336,7 +336,7 @@ $(function() {
 		}
 
 		if (mid_email == true && mid_password == true && mid_phone == true) {
-			$("#reg_form").attr("action", "http://127.0.0.1:8080/shop/user/reg.html");
+			$("#reg_form").attr("action", "user/reg.html");
 			$("#reg_form").Submit();
 		} else {
 			return false;
@@ -389,7 +389,7 @@ $(function() {
 
 		//提交注册信息
 		if (mid02_phone == true && mid02_password == true) {
-			$("#reg_form").attr("action", "http://127.0.0.1:8080/shop/user/reg.html");
+			$("#reg_form").attr("action", "user/reg.html");
 			$("#reg_form").Submit();
 		} else {
 			return false;
@@ -404,7 +404,7 @@ $(function() {
 	$(".mid .email_txt").blur(function() {
 		if(mid_email != false){
 			$.ajax({
-				url: 'http://127.0.0.1:8080/shop/user/checkName.html',
+				url: 'user/checkName.html',
 				type: 'post',
 				dataType:"text",
 				data: {"email":$(".mid .email_txt").val(),"phone":$(".mid02 .phone_txt").val(),"code":code},
@@ -428,7 +428,7 @@ $(function() {
 	$(".mid02 .phone_txt").blur(function() {
 		if(mid02_phone != false){
 			$.ajax({
-				url: 'http://127.0.0.1:8080/shop/user/checkName.html',
+				url: 'user/checkName.html',
 				type: 'post',
 				dataType:"text",
 				data: {"email":$(".mid .email_txt").val(),"phone":$(".mid02 .phone_txt").val(),"code":code},
