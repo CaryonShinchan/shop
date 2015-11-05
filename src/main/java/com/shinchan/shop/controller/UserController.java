@@ -58,7 +58,7 @@ public class UserController {
 		user.setUser_reg_date(tools.getCurrentDateTime());
 
 		userService.addUser(user);
-		return "success";
+		return "home/success";
 	}
 
 	/**
@@ -86,15 +86,18 @@ public class UserController {
 		if (null != pwdStr) {
 			// 验证是否正确
 			if (md5Util.validatePassword(pwdStr, user.getUser_password())) {
-				m.setViewName("/jsp/index");
+//				m.setViewName("home/index");
+				m.setViewName("home/index");
 				return m;
 			}
 			else
 			{
 //				redirect:http://www.baidu.com
+//				m.getModelMap().put("user", user.getUser_email());
 				m.getModelMap().put("error", "账号和密码不匹配，请重新输入！");
 //				m.setViewName("redirect:http://localhost:8080/shop/login.jsp");
 //				m.setViewName("forward:login.jsp");
+//				m.setViewName("redirect:http://localhost:8080/shop/url/login.html");
 				m.setViewName("login");
 				return m;
 			}

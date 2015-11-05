@@ -3,11 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
+		<%
+			String path = request.getContextPath();
+			String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+		%>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=0.3, user-scalable=yes, minimum-scale=0.3, maximum-scale=1.0" />
 		<title>Shinchan Shop服务协议条款</title>
 
-		<link rel="stylesheet" href="css/service.css" />
+		<link rel="stylesheet" href="<%=basePath%>css/service.css" />
 	</head>
 
 	<body>
@@ -16,8 +20,8 @@
 			<!--头部区域 -->
 			<div id="header">
 				<div class="main">
-					<h1><img src="img/logo.png"></h1>
-					<h2><span>您好，欢迎光临Shinchan Shop！<a href="login.jsp">请登录</a></span></h2>
+					<h1><img src="<%=basePath%>img/logo.png"></h1>
+					<h2><span>您好，欢迎光临Shinchan Shop！<a href="<%=basePath%>url/login.html">请登录</a></span></h2>
 				</div>
 			</div>
 

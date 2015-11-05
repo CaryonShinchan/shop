@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+
 <!DOCTYPE html>
 <html>
 
 	<head>
+		<%
+			String path = request.getContextPath();
+			String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+		%>
 		<meta charset="utf-8">
 		<title>登录注册页面</title>
-		<link rel="stylesheet" href="<%=basePath%>/css/login.css" type="text/css" />
+		<link rel="stylesheet" href="<%=basePath%>css/login.css" type="text/css" />
 		<link rel="stylesheet" href="<%=basePath%>css/style.css" type="text/css" />
 		<script type="text/javascript" src="<%=basePath%>js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="<%=basePath%>js/login.js"></script>
@@ -19,15 +20,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--头部区域 -->
 		<div id="header">
 			<div class="main">
-				<h1><img src="img/logo.png"></h1>
-				<h2><span>您好，欢迎光临Shinchan Shop！<a href="login.jsp">请登录</a></span></h2>
+				<h1><img src="<%=basePath%>/img/logo.png"></h1>
+				<h2><span>您好，欢迎光临Shinchan Shop！<a href="<%=basePath%>url/login.html">请登录</a></span></h2>
 			</div>
 		</div>
 
 		<!--登录部分 -->
 		<div id="content">
 			<div class="login">
-				<h2>用户登录<a href="registered.jsp">注册新账号</a></h2>
+				<h2>用户登录<a href="<%=basePath%>url/register.html">注册新账号</a></h2>
 				<form id="login_form" action="" method="post">
 					<div class="loginForm">
 						<div class="formItemWrap">

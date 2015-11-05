@@ -14,7 +14,12 @@ public class URLController {
 
 	@RequestMapping("register")
 	public String registrerd() {
-		return "registrerd";
+		return "registered";
+	}
+
+	@RequestMapping("service")
+	public String service() {
+		return "serviceAgreement";
 	}
 
 }

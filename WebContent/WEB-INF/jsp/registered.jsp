@@ -1,22 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 
 	<head>
+		<%
+			String path = request.getContextPath();
+			String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+		%>
 		<meta charset="UTF-8">
 		<title>登录注册页面</title>
-		<link rel="stylesheet" href="css/registered.css" type="text/css" />
-		<link rel="stylesheet" href="css/style.css" type="text/css" />
-		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript" src="js/register.js"></script>
+		<link rel="stylesheet" href="<%=basePath%>css/registered.css" type="text/css" />
+		<link rel="stylesheet" href="<%=basePath%>css/style.css" type="text/css" />
+		<script type="text/javascript" src="<%=basePath%>js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="<%=basePath%>js/register.js"></script>
 	</head>
 
 	<body>
 		<!--头部区域 -->
 		<div id="header">
 			<div class="main">
-				<h1><img src="img/logo.png"></h1>
-				<h2><span>您好，欢迎光临Shinchan Shop！<a href="login.jsp">请登录</a></span></h2>
+				<h1><img src="<%=basePath%>img/logo.png"></h1>
+				<h2><span>您好，欢迎光临Shinchan Shop！<a href="<%=basePath%>url/login.html">请登录</a></span></h2>
 			</div>
 		</div>
 
@@ -54,7 +59,7 @@
 						<span class="error error_phone"></span>
 						<div class="check">
 							<input class="check_put" type="radio" checked="checked">
-							<p>我已阅读并接受<a target="_blank" href="serviceAgreement.jsp">《服务条例》</a></p>
+							<p>我已阅读并接受<a target="_blank" href="<%=basePath%>url/service.html">《服务条例》</a></p>
 						</div>
 						<button class="reg_btn">注册</button>
 					</div>
@@ -76,7 +81,7 @@
 						<!--<input class="paswd_txt2" type="password"  placeholder="再次确认密码" >-->
 						<div class="check">
 							<input class="check_put" type="radio" checked="checked">
-							<p>我已阅读并接受<a target="_blank" href="serviceAgreement.jsp">《服务条例》</a></p>
+							<p>我已阅读并接受<a target="_blank" href="<%=basePath%>url/service.html">《服务条例》</a></p>
 						</div>
 						<button class="reg_btn">注册</button>
 					</div>
